@@ -1,14 +1,19 @@
 import time
 
+jumlah_data = int(input("Masukkan jumlah total data : "))
+
 data_mahasiswa = [
-    {"nim": "E412105", "nama": "Gathan"},
-    {"nim": "A112101", "nama": "Rafif"},
-    {"nim": "D312104", "nama": "Roy Najib"},
-    {"nim": "B212102", "nama": "Sheva"},
-    {"nim": "C112103", "nama": "Vanez"}
+  
 ]
 
-target_nim = "D312104"
+for i in range (jumlah_data) :
+    print(f"Data mahasiswa ke - {i+1}")
+    nama = input("Masukkan Nama mahasiswa : ")
+    nim = input("Masukkan NIM mahasiswa : ")
+    data_mahasiswa.append({"nama":nama, "nim":nim})
+    print("\n")
+
+target_nim = input("Masukkan NIM target : ")
 
 def linear_search(data, target):
     for mhs in data:
