@@ -1,11 +1,11 @@
 import time
 
 data_mahasiswa = [
-    {"nim": "E412105", "nama": "Eka"},
-    {"nim": "A112101", "nama": "Andi"},
-    {"nim": "D312104", "nama": "Deni"},
-    {"nim": "B212102", "nama": "Budi"},
-    {"nim": "C112103", "nama": "Citra"}
+    {"nim": "E412105", "nama": "Gathan"},
+    {"nim": "A112101", "nama": "Rafif"},
+    {"nim": "D312104", "nama": "Roy Najib"},
+    {"nim": "B212102", "nama": "Sheva"},
+    {"nim": "C112103", "nama": "Vanez"}
 ]
 
 target_nim = "D312104"
@@ -34,12 +34,15 @@ start = time.perf_counter()
 hasil_linear = linear_search(data_mahasiswa, target_nim)
 waktu_linear = (time.perf_counter() - start) * 1000
 
-data_terurut = sorted(data_mahasiswa, key=lambda x: x["nim"])
+def ambil_nim(x):
+    return x["nim"]
+
+data_terurut = sorted(data_mahasiswa, key=ambil_nim)
 
 start = time.perf_counter()
 hasil_binary = binary_search(data_terurut, target_nim)
 waktu_binary = (time.perf_counter() - start) * 1000
 
-print(f"NIM yang dicari: {target_nim}\n")
+print(f"NIM yang dicari: {target_nim}")
 print(f"[Linear Search] Nama: {hasil_linear} | Waktu: {waktu_linear:.6f} ms")
 print(f"[Binary Search] Nama: {hasil_binary} | Waktu: {waktu_binary:.6f} ms")
