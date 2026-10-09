@@ -12,8 +12,8 @@ for i in range (jumlah_data) :
     nim = input("Masukkan NIM mahasiswa : ")
     data_mahasiswa.append({"nama":nama, "nim":nim})
     print("\n")
-
-target_nim = input("Masukkan NIM target : ")
+ 
+target_nim = input("Masukkan NIM target : ").upper()
 
 def linear_search(data, target):
     for mhs in data:
